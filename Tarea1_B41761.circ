@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Pin">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Probe">
+      <a name="facing" val="west"/>
+      <a name="radix" val="10signed"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="x"/>
+    </tool>
+    <tool name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Clock">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Constant">
+      <a name="value" val="0x0"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2">
+    <tool name="Multiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Demultiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Decoder">
+      <a name="enable" val="false"/>
+    </tool>
+  </lib>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Poke Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <sep/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+  </circuit>
+  <circuit name="NOT">
+    <a name="circuit" val="NOT"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <wire from="(120,150)" to="(280,150)"/>
+    <wire from="(120,230)" to="(280,230)"/>
+    <wire from="(120,270)" to="(280,270)"/>
+    <wire from="(120,350)" to="(280,350)"/>
+    <wire from="(200,210)" to="(200,250)"/>
+    <wire from="(200,250)" to="(200,290)"/>
+    <wire from="(160,310)" to="(180,310)"/>
+    <wire from="(160,190)" to="(180,190)"/>
+    <wire from="(120,150)" to="(120,230)"/>
+    <wire from="(120,270)" to="(120,350)"/>
+    <wire from="(140,90)" to="(220,90)"/>
+    <wire from="(140,40)" to="(220,40)"/>
+    <wire from="(280,150)" to="(280,230)"/>
+    <wire from="(280,270)" to="(280,350)"/>
+    <wire from="(200,250)" to="(300,250)"/>
+    <comp lib="0" loc="(140,40)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="6" loc="(53,36)" name="Text">
+      <a name="text" val="NOT gate"/>
+    </comp>
+    <comp lib="6" loc="(167,140)" name="Text">
+      <a name="text" val="Pull-up network"/>
+    </comp>
+    <comp lib="0" loc="(200,170)" name="Power"/>
+    <comp lib="0" loc="(220,40)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(200,290)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(160,310)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(200,210)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(300,250)" name="Tunnel">
+      <a name="label" val="x"/>
+    </comp>
+    <comp lib="0" loc="(220,90)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="0" loc="(200,330)" name="Ground"/>
+    <comp lib="0" loc="(160,190)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(140,90)" name="Tunnel">
+      <a name="label" val="x"/>
+    </comp>
+    <comp lib="6" loc="(172,369)" name="Text">
+      <a name="text" val="Pull-down network"/>
+    </comp>
+  </circuit>
+  <circuit name="AND">
+    <a name="circuit" val="AND"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <wire from="(120,150)" to="(120,280)"/>
+    <wire from="(280,150)" to="(280,280)"/>
+    <wire from="(280,320)" to="(280,460)"/>
+    <wire from="(200,210)" to="(200,220)"/>
+    <wire from="(120,320)" to="(120,460)"/>
+    <wire from="(170,380)" to="(170,400)"/>
+    <wire from="(230,380)" to="(230,400)"/>
+    <wire from="(170,440)" to="(200,440)"/>
+    <wire from="(170,300)" to="(200,300)"/>
+    <wire from="(120,150)" to="(280,150)"/>
+    <wire from="(200,440)" to="(230,440)"/>
+    <wire from="(200,300)" to="(230,300)"/>
+    <wire from="(120,280)" to="(280,280)"/>
+    <wire from="(120,320)" to="(280,320)"/>
+    <wire from="(120,460)" to="(280,460)"/>
+    <wire from="(170,300)" to="(170,340)"/>
+    <wire from="(200,260)" to="(200,300)"/>
+    <wire from="(230,300)" to="(230,340)"/>
+    <wire from="(160,190)" to="(180,190)"/>
+    <wire from="(160,240)" to="(180,240)"/>
+    <wire from="(130,360)" to="(150,360)"/>
+    <wire from="(130,420)" to="(150,420)"/>
+    <wire from="(190,360)" to="(210,360)"/>
+    <wire from="(190,420)" to="(210,420)"/>
+    <wire from="(140,40)" to="(220,40)"/>
+    <wire from="(140,90)" to="(220,90)"/>
+    <wire from="(370,40)" to="(450,40)"/>
+    <wire from="(230,300)" to="(300,300)"/>
+    <comp lib="0" loc="(170,340)" name="Transistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(170,400)" name="Transistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(220,40)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(190,420)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(200,260)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(160,190)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(130,420)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(200,440)" name="Ground"/>
+    <comp lib="0" loc="(230,340)" name="Transistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(140,40)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(370,40)" name="Tunnel">
+      <a name="label" val="x"/>
+    </comp>
+    <comp lib="6" loc="(167,140)" name="Text">
+      <a name="text" val="Pull-up network"/>
+    </comp>
+    <comp lib="0" loc="(130,360)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(200,170)" name="Power"/>
+    <comp lib="0" loc="(160,240)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(190,360)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="6" loc="(53,36)" name="Text">
+      <a name="text" val="AND gate"/>
+    </comp>
+    <comp lib="0" loc="(300,300)" name="Tunnel">
+      <a name="label" val="x"/>
+    </comp>
+    <comp lib="0" loc="(200,210)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(140,90)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="6" loc="(175,482)" name="Text">
+      <a name="text" val="Pull-down network"/>
+    </comp>
+    <comp lib="0" loc="(220,90)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(230,400)" name="Transistor">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(450,40)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+    </comp>
+  </circuit>
+  <circuit name="OR">
+    <a name="circuit" val="OR"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <wire from="(90,280)" to="(280,280)"/>
+    <wire from="(90,460)" to="(280,460)"/>
+    <wire from="(90,320)" to="(280,320)"/>
+    <wire from="(90,140)" to="(280,140)"/>
+    <wire from="(240,300)" to="(300,300)"/>
+    <wire from="(280,320)" to="(280,460)"/>
+    <wire from="(160,210)" to="(160,220)"/>
+    <wire from="(280,140)" to="(280,280)"/>
+    <wire from="(190,160)" to="(190,170)"/>
+    <wire from="(240,210)" to="(240,220)"/>
+    <wire from="(200,430)" to="(200,440)"/>
+    <wire from="(190,170)" to="(240,170)"/>
+    <wire from="(90,320)" to="(90,460)"/>
+    <wire from="(90,140)" to="(90,280)"/>
+    <wire from="(120,410)" to="(120,430)"/>
+    <wire from="(160,410)" to="(200,410)"/>
+    <wire from="(150,350)" to="(250,350)"/>
+    <wire from="(160,170)" to="(190,170)"/>
+    <wire from="(160,260)" to="(160,300)"/>
+    <wire from="(240,260)" to="(240,300)"/>
+    <wire from="(120,190)" to="(140,190)"/>
+    <wire from="(120,240)" to="(140,240)"/>
+    <wire from="(200,240)" to="(220,240)"/>
+    <wire from="(200,190)" to="(220,190)"/>
+    <wire from="(150,300)" to="(150,350)"/>
+    <wire from="(140,40)" to="(220,40)"/>
+    <wire from="(140,90)" to="(220,90)"/>
+    <wire from="(160,300)" to="(240,300)"/>
+    <wire from="(120,430)" to="(200,430)"/>
+    <wire from="(150,300)" to="(160,300)"/>
+    <wire from="(370,40)" to="(450,40)"/>
+    <wire from="(240,410)" to="(250,410)"/>
+    <wire from="(250,350)" to="(250,410)"/>
+    <comp lib="0" loc="(160,410)" name="Transistor"/>
+    <comp lib="6" loc="(474,263)" name="Text">
+      <a name="text" val="0"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(240,210)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(220,90)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(190,160)" name="Power"/>
+    <comp lib="0" loc="(120,240)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="6" loc="(145,484)" name="Text">
+      <a name="text" val="Pull-down network"/>
+    </comp>
+    <comp lib="0" loc="(300,300)" name="Tunnel">
+      <a name="label" val="x"/>
+    </comp>
+    <comp lib="0" loc="(220,390)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(160,210)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(120,190)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(240,260)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="6" loc="(514,234)" name="Text">
+      <a name="text" val="1"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(475,291)" name="Text">
+      <a name="text" val="1"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(494,246)" name="Text">
+      <a name="text" val="A/B----------"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(200,240)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="6" loc="(517,263)" name="Text">
+      <a name="text" val="1"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(498,235)" name="Text">
+      <a name="text" val="0"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(140,40)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(450,40)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="0" loc="(140,90)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="6" loc="(134,130)" name="Text">
+      <a name="text" val="Pull-up network"/>
+    </comp>
+    <comp lib="0" loc="(240,410)" name="Transistor"/>
+    <comp lib="0" loc="(140,390)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(200,440)" name="Ground"/>
+    <comp lib="0" loc="(160,260)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="6" loc="(53,36)" name="Text">
+      <a name="text" val="OR gate"/>
+    </comp>
+    <comp lib="6" loc="(518,291)" name="Text">
+      <a name="text" val="1"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(499,290)" name="Text">
+      <a name="text" val="1"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(220,40)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="6" loc="(498,264)" name="Text">
+      <a name="text" val="0"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(499,278)" name="Text">
+      <a name="text" val="-------------"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(200,190)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(370,40)" name="Tunnel">
+      <a name="label" val="x"/>
+    </comp>
+  </circuit>
+  <circuit name="XOR">
+    <a name="circuit" val="XOR"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <wire from="(130,440)" to="(190,440)"/>
+    <wire from="(280,320)" to="(280,460)"/>
+    <wire from="(280,140)" to="(280,280)"/>
+    <wire from="(190,150)" to="(190,160)"/>
+    <wire from="(130,430)" to="(130,440)"/>
+    <wire from="(170,210)" to="(170,220)"/>
+    <wire from="(190,170)" to="(240,170)"/>
+    <wire from="(200,300)" to="(250,300)"/>
+    <wire from="(250,300)" to="(250,380)"/>
+    <wire from="(170,380)" to="(210,380)"/>
+    <wire from="(200,260)" to="(200,300)"/>
+    <wire from="(130,240)" to="(150,240)"/>
+    <wire from="(200,190)" to="(220,190)"/>
+    <wire from="(140,40)" to="(220,40)"/>
+    <wire from="(90,460)" to="(280,460)"/>
+    <wire from="(90,320)" to="(280,320)"/>
+    <wire from="(90,140)" to="(280,140)"/>
+    <wire from="(90,280)" to="(280,280)"/>
+    <wire from="(190,160)" to="(190,170)"/>
+    <wire from="(240,210)" to="(240,220)"/>
+    <wire from="(90,320)" to="(90,460)"/>
+    <wire from="(90,140)" to="(90,280)"/>
+    <wire from="(250,300)" to="(300,300)"/>
+    <wire from="(170,430)" to="(210,430)"/>
+    <wire from="(200,260)" to="(240,260)"/>
+    <wire from="(170,260)" to="(200,260)"/>
+    <wire from="(130,190)" to="(150,190)"/>
+    <wire from="(170,170)" to="(190,170)"/>
+    <wire from="(200,240)" to="(220,240)"/>
+    <wire from="(130,380)" to="(130,430)"/>
+    <wire from="(250,380)" to="(250,430)"/>
+    <wire from="(140,90)" to="(220,90)"/>
+    <wire from="(370,40)" to="(450,40)"/>
+    <comp lib="0" loc="(170,210)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(230,410)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="6" loc="(494,246)" name="Text">
+      <a name="text" val="A/B----------"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(200,240)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="6" loc="(475,291)" name="Text">
+      <a name="text" val="1"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(190,160)" name="Power"/>
+    <comp lib="0" loc="(370,40)" name="Tunnel">
+      <a name="label" val="x"/>
+    </comp>
+    <comp lib="0" loc="(230,360)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(240,210)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(190,440)" name="Ground"/>
+    <comp lib="6" loc="(498,264)" name="Text">
+      <a name="text" val="0"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(130,190)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="6" loc="(518,291)" name="Text">
+      <a name="text" val="0"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(300,300)" name="Tunnel">
+      <a name="label" val="x"/>
+    </comp>
+    <comp lib="0" loc="(200,190)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(170,260)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(150,410)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(140,90)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(220,40)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="6" loc="(474,263)" name="Text">
+      <a name="text" val="0"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(140,40)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(170,430)" name="Transistor">
+      <a name="type" val="n"/>
+    </comp>
+    <comp lib="0" loc="(250,430)" name="Transistor">
+      <a name="type" val="n"/>
+    </comp>
+    <comp lib="0" loc="(450,40)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="6" loc="(499,291)" name="Text">
+      <a name="text" val="1"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(130,240)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="6" loc="(169,491)" name="Text">
+      <a name="text" val="Pull-down network"/>
+    </comp>
+    <comp lib="6" loc="(53,36)" name="Text">
+      <a name="text" val="XOR gate"/>
+    </comp>
+    <comp lib="0" loc="(220,90)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="6" loc="(498,235)" name="Text">
+      <a name="text" val="0"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(150,360)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="6" loc="(514,234)" name="Text">
+      <a name="text" val="1"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(517,263)" name="Text">
+      <a name="text" val="1"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(134,130)" name="Text">
+      <a name="text" val="Pull-up network"/>
+    </comp>
+    <comp lib="0" loc="(170,380)" name="Transistor"/>
+    <comp lib="6" loc="(499,279)" name="Text">
+      <a name="text" val="-------------"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(250,380)" name="Transistor"/>
+    <comp lib="0" loc="(240,260)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="south"/>
+    </comp>
+  </circuit>
+  <circuit name="Test">
+    <a name="circuit" val="Test"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="Dialog plain 12"/>
+    <wire from="(280,320)" to="(280,420)"/>
+    <wire from="(120,150)" to="(280,150)"/>
+    <wire from="(120,280)" to="(280,280)"/>
+    <wire from="(120,320)" to="(280,320)"/>
+    <wire from="(120,420)" to="(280,420)"/>
+    <wire from="(120,150)" to="(120,280)"/>
+    <wire from="(120,320)" to="(120,420)"/>
+    <wire from="(280,150)" to="(280,280)"/>
+    <wire from="(200,380)" to="(200,390)"/>
+    <wire from="(200,300)" to="(200,340)"/>
+    <wire from="(160,190)" to="(180,190)"/>
+    <wire from="(160,360)" to="(180,360)"/>
+    <wire from="(140,40)" to="(220,40)"/>
+    <wire from="(140,90)" to="(220,90)"/>
+    <wire from="(370,40)" to="(450,40)"/>
+    <wire from="(200,210)" to="(200,300)"/>
+    <wire from="(200,300)" to="(300,300)"/>
+    <comp lib="0" loc="(160,190)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(450,40)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+    </comp>
+    <comp lib="6" loc="(175,438)" name="Text">
+      <a name="text" val="Pull-down network"/>
+    </comp>
+    <comp lib="0" loc="(220,40)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(160,360)" name="Tunnel">
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(220,90)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(200,390)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="6" loc="(53,36)" name="Text">
+      <a name="text" val="AND gate"/>
+    </comp>
+    <comp lib="0" loc="(140,90)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(140,40)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(200,340)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="6" loc="(167,140)" name="Text">
+      <a name="text" val="Pull-up network"/>
+    </comp>
+    <comp lib="0" loc="(200,210)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(300,300)" name="Tunnel">
+      <a name="label" val="x"/>
+    </comp>
+    <comp lib="0" loc="(200,170)" name="Ground">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(370,40)" name="Tunnel">
+      <a name="label" val="x"/>
+    </comp>
+  </circuit>
+</project>
